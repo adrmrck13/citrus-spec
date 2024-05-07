@@ -1,0 +1,309 @@
+/**/
+body {
+  min-height: 100vh; /* Use min-height instead of height */
+  display: flex;
+  flex-direction: column;
+  background-size: cover; /* Adjusts the background image to cover the entire container */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat;
+  background-image: url("/public/citrospec.png");
+}
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+p {
+  color: white;
+  font-size: 16px;
+}
+
+.title {
+  font-family: "chrusty rock";
+  color: black;
+  font-size: 50px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.container {
+  width: 80%;
+
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ripeness-1,
+.ripeness-2,
+.ripeness-3,
+.juicy-1,
+.juicy-2 {
+  text-align: center;
+  display: inline-block;
+}
+
+.ripe-title,
+.juiceness-title,
+.storage-title {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+}
+
+.input-brix,
+.input-vitC,
+.input-ph,
+.input-temp,
+.input-humidity,
+.input-days {
+  color: white;
+  border: none;
+  background-color: transparent;
+  width: 80px;
+  outline: none;
+  border-bottom: 2px solid white;
+}
+
+.input-brix {
+  width: 100px;
+}
+
+.brix,
+.mg,
+.celc,
+.days {
+  display: inline-block;
+}
+
+.row2 {
+  padding-top: 69px;
+}
+
+.content-1,
+.content-3 {
+  background-color: rgb(43, 66, 23);
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  width: 200px;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-ripeness-1,
+.content-ripeness-2,
+.content-juicy-2,
+.content-ripeness-3,
+.content-juicy-1 {
+  background-color: rgb(43, 66, 23);
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  width: 200px;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-2 {
+  background-color: rgb(39, 54, 22);
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-humidity-color {
+  background-color: rgb(143, 169, 84);
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  width: 200px;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-ripeness-1,
+.content-ripeness-2,
+.content-ripeness-3,
+.content-juicy-1,
+.content-juicy-2 {
+  text-align: center;
+  width: 150px;
+  padding-left: 0px;
+}
+
+.calamansi-header {
+  display: flex;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+  vertical-align: middle;
+}
+
+.button-div {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.view-database {
+  color: white;
+  background-color: rgb(79, 119, 45);
+  margin-bottom: 5px;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  transition: opacity 0.24s;
+  font-size: 16px;
+  box-shadow: inset 1px 5px 3px rgba(0, 0, 0, 0.16);
+}
+
+.view-database:hover {
+  opacity: 0.8;
+}
+
+.view-database:active {
+  opacity: 0.5;
+}
+
+.goToPhase1 {
+  color: white;
+  background-color: rgb(79, 119, 45);
+  margin-bottom: 5px;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  transition: opacity 0.24s;
+  font-size: 16px;
+  margin-top: 30px;
+  box-shadow: inset 1px 5px 3px rgba(0, 0, 0, 0.16);
+}
+
+.databaseContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90vw;
+}
+
+.dataRowHeader {
+  flex: 1;
+  display: flex;
+  justify-content: space-between; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.dataRow {
+  flex: 1;
+  display: flex;
+  justify-content: space-between; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.databaseValue {
+
+  border: 1px solid rgb(101, 121, 56);
+  height: 4rem;
+  width: 5rem;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  text-align: center;
+  padding-left: 8px;
+  padding-right:8px;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.headerNoCal,
+.headerVitC,
+.headerTSS,
+.headerPhLevel,
+.headerRipeness,
+.headerJuiciness,
+.headerTemp,
+.headerHumidity,
+.headerTime {
+  display: flex;
+  height: 4rem;
+  width: 5rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  padding-left: 9px;
+  padding-right: 9px;
+  background-color: rgb(143, 169, 84);
+  color: whitesmoke;
+  border-radius: 6px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Add these styles to your CSS file */
+.unripe,
+.ripe,
+.overripe {
+  background-color: rgb(183, 209, 123);
+}
+
+.juicy,
+.notjuicy {
+  background-color: rgb(183, 209, 123);
+}
+
+.databaseContainer::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
+}
+
+.databaseContainer::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the track */
+}
+
+.databaseContainer::-webkit-scrollbar-thumb {
+  background: #888; /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+}
+
+.databaseContainer::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the scroll thumb on hover */
+}
+
+
+
