@@ -44,6 +44,7 @@ function Database1() {
       unsubscribe(); // Detach the listener
     };
   }, []); // Empty dependency array ensures this effect runs only once on mount
+  console.log(factorsArray.map(d => d.Time));
 
   return (
     <div className="databaseContain" style={{}}>

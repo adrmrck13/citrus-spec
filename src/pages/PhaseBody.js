@@ -12,7 +12,6 @@ import React, { useState, useEffect } from "react";
 import app from "../firebaseConfig";
 // Define Phase1Body as a constant function
 export const Phase1Body = () => {
-
   return (
     <>
       <Table
@@ -21,7 +20,7 @@ export const Phase1Body = () => {
         singleLine
         basic
         style={{
-          border:'none',
+          border: "none",
           width: "80%",
           marginLeft: "auto",
           marginRight: "auto",
@@ -53,7 +52,11 @@ export const Phase1Body = () => {
               <Container className="factors">
                 {" "}
                 <p>
-                  TSS: <span className="white-underline">{factorsArray.length > 0 && (factorsArray[factorsArray.length - 1].TSS)}</span>{" "}
+                  TSS:{" "}
+                  <span className="white-underline">
+                    {factorsArray.length > 0 &&
+                      factorsArray[factorsArray.length - 1].TSS}
+                  </span>{" "}
                   <span>Brix</span>
                 </p>
               </Container>
@@ -113,7 +116,7 @@ export const Phase2Body = () => {
         singleLine
         basic
         style={{
-          border:'none',
+          border: "none",
           width: "100%",
           marginLeft: "auto",
           marginRight: "auto",

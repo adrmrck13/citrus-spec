@@ -9,13 +9,10 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import app from "./firebaseConfig";
-import { getDatabase, ref, onValue, get } from "firebase/database";
-import React, { useState, useEffect } from "react";
+
+import React from "react";
 
 function App() {
-
-
   return (
     <div className="container">
       <Router>

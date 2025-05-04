@@ -94,10 +94,15 @@ function Database2() {
               </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
+
           <Table.Body>
             {factorsArray
               .slice()
-              .sort((a, b) => new Date(b.Time) - new Date(a.Time))
+              .sort((a, b) => {
+                const timeA = parseInt(a.Time);
+                const timeB = parseInt(b.Time);
+                return timeB - timeA; // Sort latest first
+              })
               .map((data, index, array) => (
                 <Table.Row key={index} className="dataRow">
                   <Table.Cell className="databaseValue">
