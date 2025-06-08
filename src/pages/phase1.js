@@ -42,6 +42,16 @@ function Phase1() {
     };
   }, []); // Empty dependency array ensures this effect runs only once on mount
 
+  const ripenessRaw =
+    factorsArray.length > 0
+      ? parseFloat(factorsArray[factorsArray.length - 1].ripeness)
+      : null;
+
+  const juicinessRaw =
+    factorsArray.length > 0
+      ? parseFloat(factorsArray[factorsArray.length - 1].juiciness)
+      : null;
+
   const history = useHistory();
   const goToPhase2 = () => {
     history.push("/phase2");
@@ -101,10 +111,9 @@ function Phase1() {
 
           <div
             className={`content-ripeness-1 ${
-              factorsArray.length > 0 &&
-              (factorsArray[factorsArray.length - 1].ripeness === "1"
+              ripenessRaw !== null && ripenessRaw >= 0.5 && ripenessRaw <= 1.5
                 ? "unripe"
-                : "")
+                : ""
             }`}
           >
             <p className="ripeness-1">Unripe</p>
@@ -112,10 +121,9 @@ function Phase1() {
 
           <div
             className={`content-ripeness-2 ${
-              factorsArray.length > 0 &&
-              (factorsArray[factorsArray.length - 1].ripeness === "2"
+              ripenessRaw !== null && ripenessRaw > 1.5 && ripenessRaw <= 2.5
                 ? "ripe"
-                : "")
+                : ""
             }`}
           >
             <p className="ripeness-2">Ripe</p>
@@ -123,10 +131,12 @@ function Phase1() {
 
           <div
             className={`content-ripeness-3 ${
-              factorsArray.length > 0 &&
-              (factorsArray[factorsArray.length - 1].ripeness === "3"
+              ripenessRaw !== null &&
+              (ripenessRaw < 0.5 ||
+                (ripenessRaw > 2.5 && ripenessRaw <= 3.5) ||
+                ripenessRaw > 3.5)
                 ? "overripe"
-                : "")
+                : ""
             }`}
           >
             <p className="ripeness-3">Overripe</p>
@@ -140,24 +150,27 @@ function Phase1() {
 
           <div
             className={`content-juicy-1 ${
-              factorsArray.length > 0 &&
-              (factorsArray[factorsArray.length - 1].juiciness === "2"
-                ? "juicy"
-                : "")
+              juicinessRaw !== null &&
+              juicinessRaw >= 0.5 &&
+              juicinessRaw <= 1.5
+                ? "notjuicy"
+                : ""
             }`}
           >
-            <p className="juicy-1">Juicy</p>
+            <p className="juicy-2">Not Juicy</p>
           </div>
 
           <div
             className={`content-juicy-1 ${
-              factorsArray.length > 0 &&
-              (factorsArray[factorsArray.length - 1].juiciness === "1"
-                ? "notjuicy"
-                : "")
+              juicinessRaw !== null &&
+              ((juicinessRaw > 1.5 && juicinessRaw <= 2.5) ||
+                juicinessRaw < 0.5 ||
+                juicinessRaw > 2.6)
+                ? "juicy"
+                : ""
             }`}
           >
-            <p className="juicy-2">Not Juicy</p>
+            <p className="juicy-1">Juicy</p>
           </div>
         </div>
       </div>

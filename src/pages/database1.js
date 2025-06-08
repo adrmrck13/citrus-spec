@@ -44,7 +44,7 @@ function Database1() {
       unsubscribe(); // Detach the listener
     };
   }, []); // Empty dependency array ensures this effect runs only once on mount
-  console.log(factorsArray.map(d => d.Time));
+  console.log(factorsArray.map((d) => d.Time));
 
   return (
     <div className="databaseContain" style={{}}>
@@ -106,14 +106,28 @@ function Database1() {
                     {data.pHLevel}
                   </Table.Cell>
                   <Table.Cell className="databaseValue">
-                    {data.ripeness === "1"
-                      ? "Unripe"
-                      : data.ripeness === "2"
-                      ? "Ripe"
-                      : "Overripe"}
+                    {(() => {
+                      const ripeness = parseFloat(data.ripeness);
+
+                      if (ripeness >= 0.5 && ripeness <= 1.5) {
+                        return "Unripe";
+                      } else if (ripeness > 1.5 && ripeness <= 2.5) {
+                        return "Ripe";
+                      } else {
+                        return "Overripe";
+                      }
+                    })()}
                   </Table.Cell>
                   <Table.Cell className="databaseValue">
-                    {data.juiciness === "0" ? "Not juicy" : "Juicy"}
+                    {(() => {
+                      const juiciness = parseFloat(data.juiciness);
+
+                      if (juiciness >= 0.5 && juiciness <= 1.5) {
+                        return "Not Juicy";
+                      } else {
+                        return "Juicy";
+                      }
+                    })()}
                   </Table.Cell>
                 </Table.Row>
               ))}
